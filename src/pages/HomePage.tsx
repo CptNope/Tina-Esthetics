@@ -3,8 +3,8 @@ import { PageId, TreatmentItem } from '../types';
 import { TREATMENTS } from '../data/treatments';
 import { CASE_STUDIES, TESTIMONIALS } from '../data/caseStudies';
 import { GALLERY_ITEMS } from '../data/galleryData';
-import { FinancingCalculator } from '../components/FinancingCalculator';
 import { BeforeAfterSlider } from '../components/BeforeAfterSlider';
+import { FAQSection } from '../components/FAQSection';
 import { 
   Sparkles, 
   ShieldCheck, 
@@ -20,7 +20,12 @@ import {
   Stethoscope, 
   BadgeCheck, 
   Check, 
-  ExternalLink 
+  ExternalLink,
+  CreditCard,
+  Navigation,
+  Car,
+  Building2,
+  Syringe
 } from 'lucide-react';
 
 interface HomePageProps {
@@ -260,47 +265,47 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {TREATMENTS.slice(0, 3).map((treatment) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {TREATMENTS.slice(0, 4).map((treatment) => (
             <div
               key={treatment.id}
               className="bg-white rounded-2xl border border-[#E6E1D8] overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col group"
             >
-              <div className="relative h-56 overflow-hidden bg-zinc-100">
+              <div className="relative h-48 sm:h-52 overflow-hidden bg-zinc-100">
                 <img
                   src={treatment.image}
                   alt={treatment.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-[#1C1C1A] text-[11px] font-semibold px-2.5 py-1 rounded tracking-wide uppercase border border-[#E6E1D8]">
+                <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-[#1C1C1A] text-[10px] font-semibold px-2 py-0.5 rounded tracking-wide uppercase border border-[#E6E1D8]">
                   {treatment.tag}
                 </span>
               </div>
 
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
                   <div className="flex items-baseline justify-between">
-                    <h3 className="font-serif text-lg font-medium text-[#1C1C1A] group-hover:text-[#795649] transition-colors">
+                    <h3 className="font-serif text-base sm:text-lg font-medium text-[#1C1C1A] group-hover:text-[#795649] transition-colors line-clamp-1" title={treatment.title}>
                       {treatment.title}
                     </h3>
                   </div>
                   <p className="text-xs font-semibold text-[#795649] font-mono">
                     {treatment.priceDisplay}
                   </p>
-                  <p className="text-xs text-[#5C5A53] line-clamp-3 leading-relaxed">
+                  <p className="text-xs text-[#5C5A53] line-clamp-2 leading-relaxed">
                     {treatment.description}
                   </p>
                 </div>
 
-                <div className="space-y-3 pt-4 border-t border-[#F0ECE4]">
+                <div className="space-y-3 pt-3 border-t border-[#F0ECE4]">
                   <div className="grid grid-cols-2 gap-2 text-[11px] text-[#716E65]">
                     <div>
-                      <span className="text-zinc-400 block">Downtime</span>
-                      <span className="font-medium text-[#1C1C1A]">{treatment.specs.downtime}</span>
+                      <span className="text-zinc-400 block text-[10px]">Downtime</span>
+                      <span className="font-medium text-[#1C1C1A] truncate block">{treatment.specs.downtime}</span>
                     </div>
                     <div>
-                      <span className="text-zinc-400 block">Duration</span>
-                      <span className="font-medium text-[#1C1C1A]">{treatment.specs.duration}</span>
+                      <span className="text-zinc-400 block text-[10px]">Duration</span>
+                      <span className="font-medium text-[#1C1C1A] truncate block">{treatment.specs.duration}</span>
                     </div>
                   </div>
 
@@ -311,12 +316,12 @@ export const HomePage: React.FC<HomePageProps> = ({
                       rel="noopener noreferrer"
                       className="flex-1 bg-[#1C1C1A] hover:bg-[#343330] text-[#FCF9F3] text-[11px] uppercase tracking-wider font-semibold py-2.5 rounded text-center transition-colors flex items-center justify-center gap-1"
                     >
-                      <span>Book on Square</span>
+                      <span>Book</span>
                       <ExternalLink className="w-3 h-3 text-zinc-400" />
                     </a>
                     <button
                       onClick={() => onNavigate('treatments')}
-                      className="px-3 py-2 border border-[#DDD8CE] text-[11px] text-[#4A4946] hover:text-[#1C1C1A] rounded"
+                      className="px-2.5 py-2 border border-[#DDD8CE] text-[11px] text-[#4A4946] hover:text-[#1C1C1A] rounded"
                       title="Learn More"
                     >
                       Details
@@ -326,6 +331,30 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Wellness & Weight Loss Companion Discovery Banner */}
+        <div className="mt-8 bg-[#FAF7F2] rounded-2xl border border-[#E6E1D8] p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3 text-center sm:text-left">
+            <div className="w-10 h-10 rounded-full bg-[#EAEFE9] text-[#6C7A6D] flex items-center justify-center shrink-0 mx-auto sm:mx-0">
+              <Sparkles className="w-5 h-5 text-[#795649]" />
+            </div>
+            <div>
+              <h4 className="font-serif text-sm sm:text-base font-medium text-[#1C1C1A]">
+                Also In Clinic: Physician-Supervised Medical Weight Loss & Vitamin B12
+              </h4>
+              <p className="text-xs text-[#5C5A53]">
+                GLP-1 therapy (Semaglutide / Tirzepatide from $300/mo, $99 consult) and intramuscular Vitamin B12 ($25/session).
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={() => onNavigate('treatments')}
+            className="shrink-0 bg-white hover:bg-[#1C1C1A] hover:text-white text-[#1C1C1A] border border-[#DDD8CE] text-xs uppercase tracking-wider font-semibold py-2.5 px-5 rounded-lg transition-all flex items-center gap-1.5"
+          >
+            <span>View All 6 Treatments</span>
+            <ChevronRight className="w-4 h-4 text-[#795649]" />
+          </button>
         </div>
       </section>
 
@@ -455,9 +484,257 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* FINANCING CALCULATOR EMBED */}
+      {/* COMPREHENSIVE FAQ SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FinancingCalculator onOpenCherryModal={onOpenFinancing} />
+        <FAQSection />
+      </section>
+
+      {/* LOCAL SERVICE AREA & WORCESTER COUNTY SEO SECTION */}
+      <section className="bg-[#FAF7F2] py-16 sm:py-20 border-y border-[#E6E1D8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          
+          <div className="max-w-3xl mx-auto text-center space-y-3">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EAEFE9] text-[#445045] text-xs font-semibold tracking-wider uppercase border border-[#D5E0D4]">
+              <MapPin className="w-3.5 h-3.5 text-[#6C7A6D]" />
+              <span>Central Massachusetts • Worcester County</span>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl text-[#1C1C1A] font-medium">
+              Serving Worcester & Surrounding Communities
+            </h2>
+            <p className="text-sm text-[#5C5A53] leading-relaxed">
+              Conveniently located at <strong>1086 Pleasant Street</strong> in Worcester’s Tatnuck neighborhood (01602). With free on-site parking and a private, unhurried clinical environment, Dr. Tina Vo welcomes clients from across Worcester County and the MetroWest corridor.
+            </p>
+          </div>
+
+          {/* Geo Neighborhoods & Drive Times Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-2xl border border-[#E6E1D8] shadow-sm space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="font-serif text-lg font-medium text-[#1C1C1A]">Worcester & West Side</span>
+                <span className="text-[11px] font-mono font-semibold bg-[#FAF7F2] text-[#795649] px-2.5 py-1 rounded-full border border-[#E8E3D8]">
+                  Local • 2–5 min
+                </span>
+              </div>
+              <p className="text-xs text-[#5C5A53] leading-relaxed">
+                Directly in Tatnuck Square, minutes from Worcester State University, Salisbury Street, and the Canal District. Quick access from Route 122 and Park Avenue.
+              </p>
+              <div className="pt-2 text-[11px] text-[#716E65] flex items-center gap-1.5">
+                <Car className="w-3.5 h-3.5 text-[#C59B8B]" />
+                <span>Free dedicated private parking in front</span>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-[#E6E1D8] shadow-sm space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="font-serif text-lg font-medium text-[#1C1C1A]">Shrewsbury & Northborough</span>
+                <span className="text-[11px] font-mono font-semibold bg-[#FAF7F2] text-[#795649] px-2.5 py-1 rounded-full border border-[#E8E3D8]">
+                  10–14 min drive
+                </span>
+              </div>
+              <p className="text-xs text-[#5C5A53] leading-relaxed">
+                Fast drive across Lake Quinsigamond via Route 9 West straight to Pleasant St. Patients travel here for natural Botox ($13/unit) and subtle lip hydration.
+              </p>
+              <div className="pt-2 text-[11px] text-[#716E65] flex items-center gap-1.5">
+                <Navigation className="w-3.5 h-3.5 text-[#C59B8B]" />
+                <span>Via Route 9 West to Pleasant Street</span>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-[#E6E1D8] shadow-sm space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="font-serif text-lg font-medium text-[#1C1C1A]">Holden & Wachusett</span>
+                <span className="text-[11px] font-mono font-semibold bg-[#FAF7F2] text-[#795649] px-2.5 py-1 rounded-full border border-[#E8E3D8]">
+                  8–12 min drive
+                </span>
+              </div>
+              <p className="text-xs text-[#5C5A53] leading-relaxed">
+                Direct route down Route 122A South. Enjoy a peaceful, discreet clinical environment without the headaches of downtown city traffic or paid garages.
+              </p>
+              <div className="pt-2 text-[11px] text-[#716E65] flex items-center gap-1.5">
+                <Navigation className="w-3.5 h-3.5 text-[#C59B8B]" />
+                <span>Via Route 122A South straight to Tatnuck</span>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-[#E6E1D8] shadow-sm space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="font-serif text-lg font-medium text-[#1C1C1A]">Westborough & Grafton</span>
+                <span className="text-[11px] font-mono font-semibold bg-[#FAF7F2] text-[#795649] px-2.5 py-1 rounded-full border border-[#E8E3D8]">
+                  15–18 min drive
+                </span>
+              </div>
+              <p className="text-xs text-[#5C5A53] leading-relaxed">
+                Accessible via Route 9 or I-290 West. Popular destination for brides and professionals seeking V-Tech exosome microneedling packages and PRP rejuvenation.
+              </p>
+              <div className="pt-2 text-[11px] text-[#716E65] flex items-center gap-1.5">
+                <Navigation className="w-3.5 h-3.5 text-[#C59B8B]" />
+                <span>Via I-290 West to Exit 17 / Route 9</span>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-[#E6E1D8] shadow-sm space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="font-serif text-lg font-medium text-[#1C1C1A]">Auburn, Millbury & Oxford</span>
+                <span className="text-[11px] font-mono font-semibold bg-[#FAF7F2] text-[#795649] px-2.5 py-1 rounded-full border border-[#E8E3D8]">
+                  10–14 min drive
+                </span>
+              </div>
+              <p className="text-xs text-[#5C5A53] leading-relaxed">
+                Easy commute up Route 12 or I-290. Clients choose Dr. Vo for doctoral clinician-supervised medical weight loss (GLP-1 therapy) and TMJ masseter relief.
+              </p>
+              <div className="pt-2 text-[11px] text-[#716E65] flex items-center gap-1.5">
+                <Navigation className="w-3.5 h-3.5 text-[#C59B8B]" />
+                <span>Via Route 12 North / I-290 East</span>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-[#E6E1D8] shadow-sm space-y-3 flex flex-col justify-between">
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="font-serif text-lg font-medium text-[#1C1C1A]">Visiting the Clinic</span>
+                  <span className="text-[11px] font-mono font-semibold bg-[#EAEFE9] text-[#445045] px-2.5 py-1 rounded-full">
+                    Easy Access
+                  </span>
+                </div>
+                <p className="text-xs text-[#5C5A53] leading-relaxed">
+                  <strong>1086 Pleasant Street, Worcester MA 01602</strong>.<br />
+                  Appointments are private and unhurried. Text for instant inquiries: <strong>872-222-9332</strong>.
+                </p>
+              </div>
+              <div className="pt-3 flex gap-2">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=1086+Pleasant+Street+Worcester+MA+01602"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-[#1C1C1A] hover:bg-[#343330] text-white text-[11px] uppercase tracking-wider font-semibold py-2.5 rounded text-center transition-colors flex items-center justify-center gap-1.5"
+                >
+                  <MapPin className="w-3.5 h-3.5 text-[#C59B8B]" />
+                  <span>Google Maps</span>
+                </a>
+                <button
+                  onClick={() => onNavigate('location-hours')}
+                  className="px-3 py-2 border border-[#DDD8CE] text-[11px] text-[#4A4946] hover:text-[#1C1C1A] rounded"
+                >
+                  Hours
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Local Practice Credibility Checklist */}
+          <div className="bg-white rounded-2xl border border-[#E6E1D8] p-6 sm:p-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-[#4A4946]">
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-full bg-[#EAEFE9] text-[#6C7A6D] flex items-center justify-center shrink-0 mt-0.5">
+                <Award className="w-4 h-4" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-[#1C1C1A] text-sm mb-1">UMass Chan Graduate</h4>
+                <p className="text-[#716E65] leading-relaxed">
+                  Trained at Worcester’s premier medical institution with Doctor of Nursing Practice (DNP, FNP-BC) credentials.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-full bg-[#FAF7F2] text-[#795649] flex items-center justify-center shrink-0 mt-0.5">
+                <Car className="w-4 h-4" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-[#1C1C1A] text-sm mb-1">Free Stress-Free Parking</h4>
+                <p className="text-[#716E65] leading-relaxed">
+                  Dedicated off-street parking directly outside the entrance. Avoid Worcester downtown garages and meters.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-full bg-[#EAEFE9] text-[#6C7A6D] flex items-center justify-center shrink-0 mt-0.5">
+                <ShieldCheck className="w-4 h-4" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-[#1C1C1A] text-sm mb-1">100% Direct Injector Access</h4>
+                <p className="text-[#716E65] leading-relaxed">
+                  Every consultation and procedure is performed exclusively by Dr. Tina Vo herself — never delegated or rushed.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Local Verified Reviews Banner */}
+          <div className="pt-2">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h3 className="font-serif text-lg font-medium text-[#1C1C1A]">Verified Central MA Patient Feedback</h3>
+                <p className="text-xs text-[#716E65]">Real experiences from Worcester County clients</p>
+              </div>
+              <div className="flex items-center gap-1.5 text-xs text-[#795649] font-medium">
+                <div className="flex text-[#C59B8B]">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3.5 h-3.5 fill-[#C59B8B]" />
+                  ))}
+                </div>
+                <span>5.0 Star Rating</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {TESTIMONIALS.map((t) => (
+                <div key={t.id} className="bg-white p-4 rounded-xl border border-[#E6E1D8] space-y-2 text-xs flex flex-col justify-between">
+                  <div className="space-y-1.5">
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-[#1C1C1A]">{t.name}</span>
+                      <span className="text-[10px] font-mono text-[#795649] bg-[#FAF7F2] px-1.5 py-0.5 rounded border border-[#E8E3D8]">{t.location}</span>
+                    </div>
+                    <div className="text-[11px] text-[#C59B8B] font-medium">{t.treatment}</div>
+                    <p className="text-[#5C5A53] leading-relaxed line-clamp-3">
+                      "{t.comment}"
+                    </p>
+                  </div>
+                  <div className="pt-2 border-t border-[#F0ECE4] text-[10px] text-[#716E65] flex items-center justify-between">
+                    <span>{t.date}</span>
+                    <span className="text-[#6C7A6D] font-medium">✓ Verified</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* PAYMENT PLANS & FINANCING TEASER BANNER (Moved from calculator) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-3xl border border-[#E6E1D8] p-8 sm:p-12 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="space-y-3 max-w-xl text-center lg:text-left">
+            <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#795649] bg-[#FAF7F2] px-3 py-1 rounded-full border border-[#E8E3D8]">
+              <Sparkles className="w-3.5 h-3.5 text-[#C59B8B]" />
+              <span>Flexible Monthly Options</span>
+            </div>
+            <h3 className="font-serif text-2xl sm:text-3xl font-medium text-[#1C1C1A]">
+              0% APR Payment Plans Available
+            </h3>
+            <p className="text-xs sm:text-sm text-[#5C5A53] leading-relaxed">
+              We partner with Cherry to offer 3-month and 6-month 0% interest payment plans with zero impact on your credit score to check eligibility.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+            <button
+              onClick={() => onNavigate('payment-plans-financing')}
+              className="bg-[#1C1C1A] hover:bg-[#343330] text-[#FCF9F3] text-xs uppercase tracking-wider font-semibold py-4 px-6 rounded-xl transition-colors flex items-center justify-center gap-2 shadow"
+            >
+              <CreditCard className="w-4 h-4 text-[#C59B8B]" />
+              <span>Payment Calculator & Plans</span>
+            </button>
+            <button
+              onClick={onOpenFinancing}
+              className="border border-[#DDD8CE] hover:border-[#1C1C1A] text-[#1C1C1A] text-xs uppercase tracking-wider font-semibold py-4 px-5 rounded-xl transition-colors flex items-center justify-center gap-1.5"
+            >
+              <span>Instant 60s Check</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#795649]" />
+            </button>
+          </div>
+        </div>
       </section>
 
       {/* CALL TO ACTION BANNER */}

@@ -1,6 +1,8 @@
 import React from 'react';
 import { PageId } from '../types';
 import { PRICING_CATEGORIES } from '../data/pricingData';
+import { FinancingCalculator } from '../components/FinancingCalculator';
+import { FAQSection } from '../components/FAQSection';
 import { 
   Sparkles, 
   CreditCard, 
@@ -9,7 +11,8 @@ import {
   ArrowRight, 
   Check, 
   Info,
-  DollarSign
+  DollarSign,
+  ExternalLink
 } from 'lucide-react';
 
 interface PricingPageProps {
@@ -35,23 +38,21 @@ export const PricingPage: React.FC<PricingPageProps> = ({
           Service Menu & Pricing Guide
         </h1>
         <p className="text-sm sm:text-base text-[#5C5A53] max-w-2xl mx-auto leading-relaxed">
-          No mystery fees, pressure sales, or hidden charges. We believe in clear, upfront pricing for every procedure administered by <strong className="text-[#1C1C1A]">Dr. Tina Vo, MD</strong>.
+          No mystery fees, pressure sales, or hidden charges. Upfront, transparent pricing for every procedure administered by <strong className="text-[#1C1C1A]">Dr. Tina Vo</strong> at 1086 Pleasant Street, Worcester, MA.
         </p>
 
-        {/* Consultation Policy Card */}
-        <div className="max-w-xl mx-auto bg-[#FAF7F2] border border-[#E8E3D8] rounded-xl p-4 text-xs text-[#5C5A53] flex items-center justify-between gap-4 mt-6">
-          <div className="flex items-center gap-2.5 text-left">
-            <ShieldCheck className="w-5 h-5 text-[#6C7A6D] shrink-0" />
-            <span>
-              <strong>$75 Consultation Deposit:</strong> 100% credited toward your treatment when performed or scheduled.
-            </span>
-          </div>
-          <button
-            onClick={onOpenBooking}
-            className="bg-[#1C1C1A] text-white text-[11px] font-semibold px-3 py-1.5 rounded shrink-0 hover:bg-zinc-800"
+        {/* Square Link */}
+        <div className="pt-2">
+          <a
+            href="https://tinaesthetics.square.site/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider font-semibold text-[#795649] hover:underline bg-[#FAF7F2] px-4 py-2 rounded-full border border-[#E8E3D8]"
           >
-            Book
-          </button>
+            <Calendar className="w-3.5 h-3.5" />
+            <span>Book Directly on Square Live Calendar</span>
+            <ExternalLink className="w-3 h-3 text-zinc-400" />
+          </a>
         </div>
       </section>
 
@@ -112,6 +113,20 @@ export const PricingPage: React.FC<PricingPageProps> = ({
         ))}
       </section>
 
+      {/* INTERACTIVE PAYMENT CALCULATOR HERE ON PRICING PAGE */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FinancingCalculator onOpenCherryModal={onOpenFinancing} />
+      </section>
+
+      {/* PRICING & BOOKING FAQS */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FAQSection 
+          title="Pricing & Booking FAQs" 
+          subtitle="Answers to common questions regarding dosing, deposits, and payment plan qualification."
+          defaultCategory="appointments-pricing" 
+        />
+      </section>
+
       {/* FINANCING CALLOUT */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#1C1C1A] text-[#FCF9F3] rounded-3xl p-8 sm:p-12 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
@@ -134,12 +149,15 @@ export const PricingPage: React.FC<PricingPageProps> = ({
               <CreditCard className="w-4 h-4 text-[#795649]" />
               <span>Launch Financing Calc</span>
             </button>
-            <button
-              onClick={onOpenBooking}
-              className="border border-zinc-700 hover:border-zinc-500 text-white text-xs uppercase tracking-wider font-semibold py-4 px-6 rounded transition-colors text-center"
+            <a
+              href="https://tinaesthetics.square.site/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-zinc-700 hover:border-zinc-500 text-white text-xs uppercase tracking-wider font-semibold py-4 px-6 rounded transition-colors text-center flex items-center justify-center gap-1.5"
             >
-              Schedule Consultation
-            </button>
+              <Calendar className="w-4 h-4 text-[#C59B8B]" />
+              <span>Book on Square</span>
+            </a>
           </div>
         </div>
       </section>

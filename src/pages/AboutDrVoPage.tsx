@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { PageId } from '../types';
-import { FAQS } from '../data/caseStudies';
+import { FAQSection } from '../components/FAQSection';
 import { 
   ShieldCheck, 
   Sparkles, 
@@ -11,8 +11,7 @@ import {
   MapPin, 
   CheckCircle2, 
   Clock, 
-  Stethoscope,
-  ChevronDown,
+  Stethoscope, 
   ExternalLink,
   Phone,
   MessageSquare,
@@ -28,8 +27,6 @@ export const AboutDrVoPage: React.FC<AboutDrVoPageProps> = ({
   onNavigate,
   onOpenBooking,
 }) => {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
-
   return (
     <div className="space-y-20 sm:space-y-24 py-8">
       {/* HERO SECTION */}
@@ -246,47 +243,9 @@ export const AboutDrVoPage: React.FC<AboutDrVoPageProps> = ({
         </div>
       </section>
 
-      {/* FREQUENTLY ASKED QUESTIONS */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-3 mb-10">
-          <span className="text-xs uppercase tracking-widest font-semibold text-[#795649]">
-            Have Questions?
-          </span>
-          <h2 className="font-serif text-3xl text-[#1C1C1A] font-medium">
-            Common Patient Questions
-          </h2>
-        </div>
-
-        <div className="space-y-3">
-          {FAQS.map((faq, idx) => {
-            const isOpen = openFaq === idx;
-            return (
-              <div
-                key={idx}
-                className="bg-white rounded-xl border border-[#E6E1D8] overflow-hidden transition-all"
-              >
-                <button
-                  onClick={() => setOpenFaq(isOpen ? null : idx)}
-                  className="w-full text-left p-5 flex items-center justify-between gap-4 focus:outline-none"
-                >
-                  <span className="font-serif text-base font-medium text-[#1C1C1A]">
-                    {faq.question}
-                  </span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-[#795649] shrink-0 transition-transform duration-200 ${
-                      isOpen ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                {isOpen && (
-                  <div className="px-5 pb-5 pt-1 text-sm text-[#5C5A53] leading-relaxed border-t border-[#F5F2EB] animate-in fade-in">
-                    {faq.answer}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+      {/* REUSABLE INTERACTIVE FAQ SECTION */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FAQSection title="Provider & Practice FAQs" subtitle="Common questions regarding Dr. Tina Vo's credentials, appointment expectations, and clinical standards." />
       </section>
     </div>
   );

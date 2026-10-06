@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { PageId } from '../types';
-import { CASE_STUDIES, FAQS } from '../data/caseStudies';
+import { CASE_STUDIES } from '../data/caseStudies';
 import { FinancingCalculator } from '../components/FinancingCalculator';
+import { FAQSection } from '../components/FAQSection';
 import { 
   Sparkles, 
   ShieldCheck, 
@@ -27,9 +28,6 @@ export const FinancingPage: React.FC<FinancingPageProps> = ({
   onOpenBooking,
   onOpenCherryModal,
 }) => {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const financingFaqs = FAQS.filter(f => f.category === 'financing' || f.category === 'general');
-
   return (
     <div className="space-y-20 sm:space-y-24 py-8">
       {/* HERO SECTION */}
@@ -42,7 +40,7 @@ export const FinancingPage: React.FC<FinancingPageProps> = ({
           Flexible Payment Plans & 0% APR Financing
         </h1>
         <p className="text-sm sm:text-base text-[#5C5A53] max-w-2xl mx-auto leading-relaxed">
-          Invest in your confidence without compromise. At Tinaesthetics, we partner with Cherry and CareCredit to offer transparent, affordable monthly options with <strong className="text-[#1C1C1A]">zero impact on your credit score to check</strong>.
+          Invest in your confidence without compromise. At Tinaesthetics, we partner with Cherry to offer transparent, affordable monthly options with <strong className="text-[#1C1C1A]">zero impact on your credit score to check</strong>.
         </p>
 
         {/* Badges */}
@@ -62,7 +60,7 @@ export const FinancingPage: React.FC<FinancingPageProps> = ({
         </div>
       </section>
 
-      {/* CALCULATOR TOOL EMBED */}
+      {/* CALCULATOR TOOL EMBED - CENTERPIECE ON FINANCING PAGE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FinancingCalculator onOpenCherryModal={onOpenCherryModal} />
       </section>
@@ -97,7 +95,7 @@ export const FinancingPage: React.FC<FinancingPageProps> = ({
               {
                 step: '03',
                 title: 'Treat Today, Pay Over Time',
-                desc: 'Receive your treatment by Dr. Tina Vo, MD with complete peace of mind. Monthly installments are automatically managed through Cherry’s secure patient portal.',
+                desc: 'Receive your treatment by Dr. Tina Vo with complete peace of mind. Monthly installments are automatically managed through Cherry’s secure patient portal.',
               },
             ].map((s, idx) => (
               <div 
@@ -139,7 +137,7 @@ export const FinancingPage: React.FC<FinancingPageProps> = ({
             Patient Treatment Plans & Monthly Breakdowns
           </h2>
           <p className="text-sm text-[#5C5A53]">
-            See how real patients structure full treatment packages into comfortable monthly installments.
+            See how real clients structure full treatment packages into comfortable monthly installments.
           </p>
         </div>
 
@@ -215,47 +213,13 @@ export const FinancingPage: React.FC<FinancingPageProps> = ({
         </div>
       </section>
 
-      {/* FINANCING FAQS */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-3 mb-10">
-          <span className="text-xs uppercase tracking-widest font-semibold text-[#795649]">
-            Financing Help
-          </span>
-          <h2 className="font-serif text-3xl text-[#1C1C1A] font-medium">
-            Frequently Asked Financing Questions
-          </h2>
-        </div>
-
-        <div className="space-y-3">
-          {financingFaqs.map((faq, idx) => {
-            const isOpen = openFaq === idx;
-            return (
-              <div
-                key={idx}
-                className="bg-white rounded-xl border border-[#E6E1D8] overflow-hidden"
-              >
-                <button
-                  onClick={() => setOpenFaq(isOpen ? null : idx)}
-                  className="w-full text-left p-5 flex items-center justify-between gap-4 focus:outline-none"
-                >
-                  <span className="font-serif text-base font-medium text-[#1C1C1A]">
-                    {faq.question}
-                  </span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-[#795649] shrink-0 transition-transform ${
-                      isOpen ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                {isOpen && (
-                  <div className="px-5 pb-5 pt-1 text-sm text-[#5C5A53] leading-relaxed border-t border-[#F5F2EB]">
-                    {faq.answer}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+      {/* FINANCING FAQS SECTION */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FAQSection 
+          title="Frequently Asked Financing Questions"
+          subtitle="Learn about Cherry financing qualification, 0% APR terms, and application speed."
+          defaultCategory="appointments-pricing"
+        />
       </section>
     </div>
   );

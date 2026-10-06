@@ -15,11 +15,19 @@
    - [Brand Imagery & Photography Guidelines](#brand-imagery--photography-guidelines)
    - [Logomark & Monogram Usage](#logomark--monogram-usage)
 3. [Clinical Services & Pricing Architecture](#-clinical-services--pricing-architecture)
-4. [GitHub Pages Deployment Guide](#-github-pages-deployment-guide)
+4. [Local SEO & Organic Search Game Plan](#-local-seo--organic-search-game-plan)
+   - [Strategic Objectives & Market Positioning](#strategic-objectives--market-positioning)
+   - [High-Intent Local Keyword Matrix](#high-intent-local-keyword-matrix)
+   - [Google Business Profile (GBP) 30-Day Launch & Domination Plan](#google-business-profile-gbp-30-day-launch--domination-plan)
+   - [HIPAA-Compliant Review Generation Funnel](#hipaa-compliant-review-generation-funnel)
+   - [On-Page & Technical SEO Architecture](#on-page--technical-seo-architecture)
+   - [Local Citations & Regional Authority Link Building](#local-citations--regional-authority-link-building)
+   - [KPI Tracking & Performance Dashboard](#kpi-tracking--performance-dashboard)
+5. [GitHub Pages Deployment Guide](#-github-pages-deployment-guide)
    - [Option A: Automatic Deployment via GitHub Actions (Recommended)](#option-a-automatic-deployment-via-github-actions-recommended)
    - [Option B: Deploy from Branch (`gh-pages` or `main`)](#option-b-deploy-from-branch-gh-pages-or-main)
    - [Base Path Configuration](#base-path-configuration)
-5. [Local Development & Build](#-local-development--build)
+6. [Local Development & Build](#-local-development--build)
 
 ---
 
@@ -125,6 +133,132 @@ T I N A E S T H E T I C S
 | **GLP-1 Program** | Semaglutide / Tirzepatide Protocol | **Starts at $300 / mo** | Includes medication, 4 injections/mo, clinician check-ins |
 | **Vitamin B12** | Weekly Bioactive B12 (1ml) | **$25 / injection** | Upper-arm intramuscular delivery |
 | **Vitamin B12** | Monthly Bioactive B12 (3ml) | **$40 / injection** | High-dose energy & metabolic support |
+
+---
+
+## 📈 Local SEO & Organic Search Game Plan
+
+A structured, 6-pillar digital acquisition strategy engineered specifically for **Tinaesthetics by Dr. Vo** to capture high-value aesthetic and medical wellness patients across **Worcester, MA and Worcester County**.
+
+```
+          ┌────────────────────────────────────────────────────────┐
+          │      TINAESTHETICS LOCAL SEARCH DOMINATION ENGINE      │
+          └───────────────────────────┬────────────────────────────┘
+                                      │
+         ┌────────────────────────────┼────────────────────────────┐
+         ▼                            ▼                            ▼
+┌──────────────────┐        ┌──────────────────┐        ┌──────────────────┐
+│  Google Business │        │ On-Page / Schema │        │ Local Geo-Reach  │
+│  Profile (GBP)   │        │ Structured Data  │        │ Worcester County │
+│  - Exact NAP     │        │ - MedicalBiz     │        │ - Tatnuck Sq     │
+│  - 5-Star Funnel │        │ - FAQPage Rich   │        │ - Route 9 / Shrew│
+│  - Weekly Posts  │        │ - Core Web Vital │        │ - Holden/Grafton │
+└──────────────────┘        └──────────────────┘        └──────────────────┘
+```
+
+### Strategic Objectives & Market Positioning
+1. **Dominate Google Map 3-Pack Rankings** for high-intent aesthetic queries within a 15-mile radius of **1086 Pleasant Street, Worcester, MA 01602**.
+2. **Establish Clinical Superiority Over Generic Medspas**: Emphasize Dr. Tina Vo's credentials as a doctoral-trained nurse practitioner (DNP, FNP-BC) and UMass Chan Medical School graduate, delivering 100% direct injector care rather than delegating to uncredentialed staff.
+3. **Drive Zero-Friction Conversions**: Route high-intent searchers immediately to direct Square online booking or text-preferred concierge communication (`872-222-9332`).
+
+---
+
+### High-Intent Local Keyword Matrix
+
+| Keyword Group | Target Queries | Search Intent | Target Landing / Anchor |
+| :--- | :--- | :--- | :--- |
+| **Core Injectables** | `Botox Worcester MA`, `Daxxify Worcester`, `Lip Filler Worcester MA`, `Best Botox injector Worcester`, `Neurotoxin Worcester` | High Transactional | Home & Treatments (`#treatments`) |
+| **Transparent Pricing** | `Botox cost Worcester $13 unit`, `Cheapest Botox Worcester MA`, `Lip filler price Worcester $450`, `Cherry financing medspa Worcester` | Commercial Research | Pricing Guide (`#pricing`) & Financing |
+| **Regenerative & Skin** | `Microneedling Worcester MA`, `Exosome microneedling Worcester`, `PRP under eyes Worcester`, `PRP hair loss Worcester MA` | Transactional | Treatments (`#treatments`) & Gallery |
+| **Medical Weight Loss** | `Medical weight loss Worcester MA`, `Semaglutide Worcester`, `Tirzepatide clinic Worcester`, `GLP-1 doctor Worcester` | Transactional | Treatments & Weight Loss Spotlight |
+| **Geo & Neighborhood** | `Botox near Tatnuck Worcester`, `Aesthetics Shrewsbury MA`, `Botox Holden MA`, `Medspa Westborough MA`, `1086 Pleasant St Worcester` | Local Navigation | Location & Hours (`#location-hours`) |
+
+---
+
+### Google Business Profile (GBP) 30-Day Launch & Domination Plan
+
+Your Google Business Profile is the #1 driver of inbound patient calls, directions requests, and booking clicks.
+
+1. **Exact NAP (Name, Address, Phone) Standardization**:
+   - **Business Name**: `Tinaesthetics by Dr. Vo — Medical Aesthetics & Injections`
+   - **Street Address**: `1086 Pleasant Street, Worcester, MA 01602`
+   - **Primary Phone**: `(872) 222-9332`
+   - **Website URL**: `https://www.tinaestheticsbydrvo.com/`
+   - **Appointment Link**: `https://tinaesthetics.square.site/`
+2. **Category Selection**:
+   - **Primary Category**: `Medical Spa`
+   - **Secondary Categories**: `Nurse Practitioner`, `Skin Care Clinic`, `Weight Loss Service`, `Wellness Center`
+3. **Structured Service Catalog**:
+   - Add every service with published prices ($13/unit Neurotoxin, $450 Mini Plump Lip Filler, $500 V-Tech Microneedling, $99 Weight Loss Consult).
+4. **Weekly GBP Updates Cadence**:
+   - Post 1 educational update per week (e.g., *"Why Dr. Vo preserves expressive mobility with personalized neurotoxin dosing"*).
+   - Upload high-resolution, uncompressed in-office photos weekly with location metadata tagged to 1086 Pleasant St.
+
+---
+
+### HIPAA-Compliant Review Generation Funnel
+
+Google's local algorithm heavily weights review velocity, keywords in reviews, and total star rating.
+
+1. **Automated Post-Treatment SMS Message (Sent 48–72 hours after appointment)**:
+   > *"Hi [First Name], this is Dr. Tina checking in! How is everything settling after your visit at 1086 Pleasant St? If you loved your experience, taking 30 seconds to leave us a Google review means the world to our small local practice: [Direct Google Review Shortlink]. Thank you!"*
+2. **Encourage Keyword-Rich Feedback**:
+   - Gently prompt clients: *"Tell others what treatment you received (like your lip mini-plump or Botox) and how Dr. Vo explained the process!"*
+3. **Response Protocol**:
+   - Respond to 100% of reviews within 24 hours without mentioning protected health information (PHI). Example: *"Thank you so much for your kind words! It was a pleasure welcoming you to our Worcester clinic."*
+
+---
+
+### On-Page & Technical SEO Architecture
+
+The Tinaesthetics web application has been engineered with production-grade technical SEO:
+
+1. **Schema.org Structured Data (Embedded in `index.html`)**:
+   - `@type: ["MedicalBusiness", "HealthAndBeautyBusiness"]`: Identifies the clinic to Google's Knowledge Graph.
+   - `founder`: Highlights Dr. Tina Vo (DNP, FNP-BC) and UMass Chan Medical School alumni affiliation.
+   - `areaServed`: Explicitly registers Worcester, Shrewsbury, Holden, Grafton, Westborough, Auburn, Northborough, and Millbury.
+   - `hasOfferCatalog`: Feeds real pricing ($13/unit, $450, $500, $99) into search engines.
+   - `FAQPage`: Powers rich interactive accordion snippets directly on Google SERPs for queries like *"How much does Botox cost in Worcester MA?"*.
+2. **Local Geo-Relevance Section (Live on Home Page)**:
+   - Dedicated interactive section detailing drive times and routes from Tatnuck, West Side, Route 9 (Shrewsbury), Route 122A (Holden), and I-290.
+   - Clear parking reassurance (free dedicated off-street parking outside 1086 Pleasant St).
+3. **Core Web Vitals & Speed**:
+   - Ultra-fast client-side bundle (<1.2s First Contentful Paint).
+   - Zero Cumulative Layout Shift (CLS) on typography and hero imagery.
+   - Modern responsive WebP/PNG assets loaded via fast CDNs.
+
+---
+
+### Local Citations & Regional Authority Link Building
+
+Establish high-authority regional backlinks to build domain trust:
+
+1. **Top-Tier Medical & Local Directory Citations**:
+   - [ ] Apple Maps / Apple Business Connect
+   - [ ] Bing Places for Business
+   - [ ] Yelp for Business (Worcester, MA)
+   - [ ] Healthgrades & Vitals (Dr. Tina Vo, DNP profile)
+   - [ ] RealSelf (Verified Injector profile)
+   - [ ] Doximity
+2. **Local Worcester County Backlink Opportunities**:
+   - [ ] Worcester Regional Chamber of Commerce Business Directory
+   - [ ] UMass Chan Medical School Alumni business spotlight
+   - [ ] Central Massachusetts wedding & bridal vendor guides (e.g. *Bridal Skin Prep at Tinaesthetics*)
+   - [ ] Cross-promotions with local fitness studios, high-end hair salons, and spas in West Worcester and Shrewsbury.
+
+---
+
+### KPI Tracking & Performance Dashboard
+
+Track these core metrics monthly to evaluate campaign health:
+
+| Metric | Source | Benchmark Goal (90 Days) |
+| :--- | :--- | :--- |
+| **Google Map 3-Pack Rank** | Local Falcon / BrightLocal | Top 3 for "Botox Worcester" & "Lip Filler Worcester" |
+| **Google Search Console Clicks** | GSC | 500+ monthly non-branded organic clicks |
+| **GBP Direct Actions** | Google Business Profile | 50+ monthly direction requests & phone calls |
+| **Square Booking Conversions** | Square Analytics | 35+ monthly digital booking completions |
+| **Verified 5-Star Reviews** | Google Business Profile | 30+ authentic 5.0-star client reviews |
 
 ---
 
