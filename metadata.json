@@ -1,0 +1,6 @@
+{
+  "name": "Tinaesthetics by Dr. Vo",
+  "description": "Personalized aesthetic and wellness care, cosmetic injectables ($13/unit), dermal fillers, and weight loss curated by Dr. Tina Vo in Worcester, Massachusetts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
